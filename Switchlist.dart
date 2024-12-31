@@ -19,7 +19,6 @@ class SwitchListPage extends StatefulWidget {
 }
 
 class _SwitchListPageState extends State<SwitchListPage> {
-  // List of items with their switch state
   List<Item> items = [
     Item(name: "Item 1", isSwitched: false),
     Item(name: "Item 2", isSwitched: true),
@@ -28,7 +27,6 @@ class _SwitchListPageState extends State<SwitchListPage> {
     Item(name: "Item 5", isSwitched: false),
   ];
 
-  // Method to update the state of the switch
   void updateSwitch(bool value, int index) {
     setState(() {
       items[index].isSwitched = value;
@@ -50,7 +48,7 @@ class _SwitchListPageState extends State<SwitchListPage> {
               title: Text(items[index].name),
               value: items[index].isSwitched,
               onChanged: (bool value) {
-                updateSwitch(value, index); // Update the toggle state dynamically
+                updateSwitch(value, index); 
               },
             );
           },
@@ -60,7 +58,6 @@ class _SwitchListPageState extends State<SwitchListPage> {
   }
 }
 
-// Item model to represent each item with a name and switch state
 class Item {
   String name;
   bool isSwitched;
